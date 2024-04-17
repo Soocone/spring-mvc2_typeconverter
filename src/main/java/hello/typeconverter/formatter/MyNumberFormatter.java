@@ -15,8 +15,8 @@ public class MyNumberFormatter implements Formatter<Number> {
     public Number parse(String text, Locale locale) throws ParseException {
         log.info("text={}, locale={}", text, locale);
         //"1,000" -> 1000
-        NumberFormat format = NumberFormat.getInstance(locale);
-        return format.parse(text);
+        NumberFormat format = NumberFormat.getInstance(locale); // NumberFormat 객체를 쓰면 쉼표 제거하고 locale에 따라 다른 숫자 포맷 만들어줌
+        return format.parse(text); // parse가 문자를 숫자로 변환시켜줌
     }
 
     @Override
